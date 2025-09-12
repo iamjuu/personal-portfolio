@@ -3,6 +3,7 @@ import { FaLocationArrow } from "react-icons/fa6";
 import { socialMedia } from "@/data";
 import MagicButton from "./MagicButton";
 import Image from "next/image";
+import { Github, Linkedin, Instagram, Mail, MessageCircle } from "lucide-react";
 
 const Footer = () => {
   return (
@@ -26,7 +27,7 @@ const Footer = () => {
           Reach out to me today and let&apos;s discuss how I can help you
           achieve your goals.
         </p>
-        <a href="muhammedajmalcc6424094@gmail.com">
+        <a href="mailto:muhammedajmalcc6424094@gmail.com">
           <MagicButton
             title="Let's get in touch"
             icon={<FaLocationArrow />}
@@ -40,14 +41,32 @@ const Footer = () => {
         </p>
 
         <div className="flex items-center md:gap-3 gap-6">
-          {socialMedia.map((info) => (
-            <div
-              key={info.id}
-              className="w-10 h-10 cursor-pointer flex justify-center items-center backdrop-filter backdrop-blur-lg saturate-180 bg-opacity-75 bg-black-200 rounded-lg border border-black-300"
-            >
-              <Image src={info.img} alt="icons" width={20} height={20} />
-            </div>
-          ))}
+          {socialMedia.map((info) => {
+            const label = info.label as string;
+            const href = (info as any).href as string;
+            const Icon =
+              label === "github"
+                ? Github
+                : label === "linkedin"
+                ? Linkedin
+                : label === "instagram"
+                ? Instagram
+                : label === "whatsapp"
+                ? MessageCircle
+                : Mail;
+            return (
+              <a
+                key={info.id}
+                href={href}
+                target={href.startsWith("http") ? "_blank" : undefined}
+                rel={href.startsWith("http") ? "noopener noreferrer" : undefined}
+                className="w-10 h-10 cursor-pointer flex justify-center items-center backdrop-filter backdrop-blur-lg saturate-180 bg-opacity-75 bg-black-200 rounded-lg border border-black-300"
+                aria-label={label}
+              >
+                <Icon size={20} />
+              </a>
+            );
+          })}
         </div>
       </div>
     </footer>

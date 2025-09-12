@@ -207,15 +207,27 @@ export const workExperience = [
 export const socialMedia = [
   {
     id: 1,
-    img: "/git.svg",
+    label: "github",
+    href: "#",
   },
   {
     id: 2,
-    img: "/twit.svg",
+    label: "linkedin",
+    href: "#",
   },
   {
     id: 3,
-    img: "/link.svg",
-
+    label: "instagram",
+    href: "#",
+  },
+  {
+    id: 4,
+    label: "whatsapp",
+    href: "#",
+  },
+  {
+    id: 5,
+    label: "mail",
+    href: "mailto:muhammedajmalcc6424094@gmail.com",
   },
 ];
