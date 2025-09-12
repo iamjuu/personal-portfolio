@@ -9,19 +9,20 @@ import Image from "next/image";
 const RecentProjects = () => {
   return (
     <div className="py-20">
-      <h1 className="heading">
-        A small selection of{" "}
-        <span className="text-purple">recent projects</span>
-      </h1>
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8  mt-10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h1 className="heading">
+          A small selection of{" "}
+          <span className="text-purple"> projects</span>
+        </h1>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mt-10">
         {projects.map((item) => (
           <div
-            className="lg:min-h-[32.5rem] h-[25rem] flex items-center justify-center"
+            className=" flex items-center justify-center"
             key={item.id}
           >
             <PinContainer
-              title="@muhammedajmalcc.com"
-              href="https://twitter.com/muhammedajmalcc"
+              title="muhammed_ajmalcc"
+              href="https:/muhammedajmalcc"
             >
               <div className="relative flex items-center justify-center w-full overflow-hidden h-[20vh] lg:h-[30vh] mb-10">
                 <div
@@ -39,12 +40,12 @@ const RecentProjects = () => {
                 />
               </div>
 
-              <h1 className="font-bold lg:text-2xl md:text-xl text-base line-clamp-1">
+              <h1 className="text-[14px] line-clamp-1">
                 {item.title}
               </h1>
 
               <p
-                className="lg:text-xl lg:font-normal font-light text-sm line-clamp-2"
+                className="  font-light text-[12px] line-clamp-2"
                 style={{
                   color: "#BEC1DD",
                   margin: "1vh 0",
@@ -78,6 +79,7 @@ const RecentProjects = () => {
             </PinContainer>
           </div>
         ))}
+        </div>
       </div>
     </div>
   );
