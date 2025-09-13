@@ -72,14 +72,18 @@
   }
   body {
     @apply bg-background text-foreground overflow-x-hidden;
-  }
-  
-  /* Hide default cursor only when custom cursor is working */
-  html {
-    cursor: none;
+    /* Prevent zoom on mobile devices */
+    touch-action: manipulation;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
   }
   button {
     @apply active:outline-none;
+  }
+  
+  /* Prevent zoom on input focus */
+  input, textarea, select {
+    font-size: 16px;
   }
   
   /* Hide scrollbars for all browsers */
@@ -92,19 +96,6 @@
     display: none; /* WebKit browsers (Chrome, Safari, Edge) */
   }
 
-  /* Custom cursor styles */
-  [data-cursor-hover] {
-    cursor: none;
-  }
-
-  /* Ensure cursor is always visible and on top */
-  [data-cursor-element] {
-    display: block !important;
-    opacity: 1 !important;
-    visibility: visible !important;
-    pointer-events: none !important;
-    z-index: 9999 !important;
-  }
 
   /* Ultra-optimized cursor performance */
   .will-change-transform {

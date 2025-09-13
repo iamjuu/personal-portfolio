@@ -78,7 +78,6 @@ export const FloatingNav = ({
             className={cn(
               "relative dark:text-neutral-50 items-center  flex space-x-1 text-neutral-600 dark:hover:text-neutral-300 hover:text-neutral-500"
             )}
-            data-cursor-hover
           >
             <span className="block sm:hidden">{navItem.icon}</span>
             {/* add !cursor-pointer */}

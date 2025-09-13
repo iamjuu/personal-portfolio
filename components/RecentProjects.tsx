@@ -16,7 +16,7 @@ const RecentProjects = () => {
         </h1>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 py-[100px] gap-8 mt-10">
         {projects.map((item) => (
-          <div key={item.id} className="h-[400px] w-full" data-cursor-hover>
+          <div key={item.id} className="h-[400px] w-full">
             <PinContainer
               title="muhammed_ajmalcc"
               href="https:/muhammedajmalcc"
