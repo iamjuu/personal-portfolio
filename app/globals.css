@@ -73,8 +73,58 @@
   body {
     @apply bg-background text-foreground overflow-x-hidden;
   }
+  
+  /* Hide default cursor only when custom cursor is working */
+  html {
+    cursor: none;
+  }
   button {
     @apply active:outline-none;
+  }
+  
+  /* Hide scrollbars for all browsers */
+  * {
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* Internet Explorer 10+ */
+  }
+  
+  *::-webkit-scrollbar {
+    display: none; /* WebKit browsers (Chrome, Safari, Edge) */
+  }
+
+  /* Custom cursor styles */
+  [data-cursor-hover] {
+    cursor: none;
+  }
+
+  /* Ensure cursor is always visible and on top */
+  [data-cursor-element] {
+    display: block !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    pointer-events: none !important;
+    z-index: 9999 !important;
+  }
+
+  /* Ultra-optimized cursor performance */
+  .will-change-transform {
+    will-change: transform;
+  }
+
+  /* GPU acceleration for smooth animations */
+  * {
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+  }
+
+  /* Cursor-specific optimizations */
+  [data-cursor-element] {
+    transform: translateZ(0);
+    -webkit-transform: translateZ(0);
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    perspective: 1000px;
+    -webkit-perspective: 1000px;
   }
 }
 

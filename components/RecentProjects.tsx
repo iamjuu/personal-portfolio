@@ -14,66 +14,68 @@ const RecentProjects = () => {
           A small selection of{" "}
           <span className="text-purple"> projects</span>
         </h1>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mt-10">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 py-[100px] gap-8 mt-10">
         {projects.map((item) => (
-          <PinContainer
-            title="muhammed_ajmalcc"
-            href="https:/muhammedajmalcc"
-            key={item.id}
-          >
-              <div className="relative flex items-center justify-center w-full overflow-hidden h-[20vh] lg:h-[30vh] mb-10">
-                <div
-                  className="relative w-full h-full overflow-hidden lg:rounded-3xl"
-                  style={{ backgroundColor: "#13162D" }}
+          <div key={item.id} className="h-[400px] w-full" data-cursor-hover>
+            <PinContainer
+              title="muhammed_ajmalcc"
+              href="https:/muhammedajmalcc"
+              containerClassName="h-full w-full"
+            >
+                <div className="relative flex items-center justify-center w-full overflow-hidden h-[20vh] lg:h-[30vh] mb-10">
+                  <div
+                    className="relative w-full h-full overflow-hidden lg:rounded-3xl"
+                    style={{ backgroundColor: "#13162D" }}
+                  >
+                    <Image src="/bg.png" alt="bgimg" fill className="object-cover" />
+                  </div>
+                  <Image
+                    src={item.img}
+                    alt="cover"
+                    width={600}
+                    height={360}
+                    className="z-10 absolute bottom-0"
+                  />
+                </div>
+
+                <h1 className="text-[14px] line-clamp-1">
+                  {item.title}
+                </h1>
+
+                <p
+                  className="font-light text-[12px] line-clamp-2"
+                  style={{
+                    color: "#BEC1DD",
+                    margin: "1vh 0",
+                  }}
                 >
-                  <Image src="/bg.png" alt="bgimg" fill className="object-cover" />
+                  {item.des}
+                </p>
+
+                <div className="flex items-center justify-between mt-7 mb-3 w-full flex-nowrap">
+                  <div className="flex items-center">
+                    {item.iconLists.map((icon, index) => (
+                      <div
+                        key={index}
+                        className="border border-white/[.2] rounded-full bg-black lg:w-10 lg:h-10 w-8 h-8 flex justify-center items-center"
+                        style={{
+                          transform: `translateX(-${5 * index + 2}px)`,
+                        }}
+                      >
+                        <Image width={50} height={50} src={icon} alt="icon5" className="w-full p-2 h-full" />
+                      </div>
+                    ))}
+                  </div>
+
+                  <div className="flex justify-center items-center whitespace-nowrap">
+                    <p className="flex text-[12px] text-purple">
+                      Check Live Site
+                    </p>
+                    <FaLocationArrow className="ms-3" color="#CBACF9" />
+                  </div>
                 </div>
-                <Image
-                  src={item.img}
-                  alt="cover"
-                  width={600}
-                  height={360}
-                  className="z-10 absolute bottom-0"
-                />
-              </div>
-
-              <h1 className="text-[14px] line-clamp-1">
-                {item.title}
-              </h1>
-
-              <p
-                className="  font-light text-[12px] line-clamp-2"
-                style={{
-                  color: "#BEC1DD",
-                  margin: "1vh 0",
-                }}
-              >
-                {item.des}
-              </p>
-
-              <div className="flex items-center   justify-between mt-7 mb-3 w-full flex-nowrap">
-                <div className="flex   items-center">
-                  {item.iconLists.map((icon, index) => (
-                    <div
-                      key={index}
-                      className="border border-white/[.2] rounded-full bg-black lg:w-10 lg:h-10 w-8 h-8 flex justify-center items-center"
-                      style={{
-                        transform: `translateX(-${5 * index + 2}px)`,
-                      }}
-                    >
-                      <Image  width={50} height={50}  src={icon} alt="icon5"  className="w-full p-2 h-full" />
-                    </div>
-                  ))}
-                </div>
-
-                <div className="flex justify-center items-center whitespace-nowrap">
-                  <p className="flex text-[12px] text-purple">
-                    Check Live Site
-                  </p>
-                  <FaLocationArrow className="ms-3" color="#CBACF9" />
-                </div>
-              </div>
-            </PinContainer>
+              </PinContainer>
+          </div>
         ))}
         </div>
       </div>
