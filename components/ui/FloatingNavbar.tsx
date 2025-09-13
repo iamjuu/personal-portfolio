@@ -78,6 +78,14 @@ export const FloatingNav = ({
             className={cn(
               "relative dark:text-neutral-50 items-center  flex space-x-1 text-neutral-600 dark:hover:text-neutral-300 hover:text-neutral-500"
             )}
+            onClick={() => {
+              if (navItem.link.startsWith('#')) {
+                const element = document.querySelector(navItem.link);
+                if (element) {
+                  element.scrollIntoView({ behavior: 'smooth' });
+                }
+              }
+            }}
           >
             <span className="block sm:hidden">{navItem.icon}</span>
             {/* add !cursor-pointer */}

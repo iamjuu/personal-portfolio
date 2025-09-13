@@ -62,6 +62,13 @@ const Footer = () => {
                 rel={href.startsWith("http") ? "noopener noreferrer" : undefined}
                 className="w-10 h-10 cursor-pointer flex justify-center items-center backdrop-filter backdrop-blur-lg saturate-180 bg-opacity-75 bg-black-200 rounded-lg border border-black-300"
                 aria-label={label}
+                onClick={(e) => {
+                  if (label === "mail") {
+                    console.log("Email icon clicked, href:", href);
+                    // Ensure the mailto link works
+                    window.location.href = href;
+                  }
+                }}
               >
                 <Icon size={20} />
               </a>

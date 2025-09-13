@@ -1,4 +1,5 @@
 export const navItems = [
+  git 
   { name: "About", link: "#about" },
   { name: "Projects", link: "#projects" },
   { name: "Testimonials", link: "#testimonials" },
@@ -49,7 +50,7 @@ export const gridItems = [
 
   {
     id: 5,
-    title: "Currently building a JS Animation library",
+    title: "Currently building modern web applications",
     description: "The Inside Scoop",
     className: "md:col-span-3 md:row-span-2",
     imgClassName: "absolute right-0 bottom-0 md:w-96 w-60",
@@ -208,22 +209,22 @@ export const socialMedia = [
   {
     id: 1,
     label: "github",
-    href: "#",
+    href: "https://github.com/iamjuu",
   },
   {
     id: 2,
     label: "linkedin",
-    href: "#",
+    href: "https://www.linkedin.com/in/muhammed-ajmal-cc-a39a58298/",
   },
   {
     id: 3,
     label: "instagram",
-    href: "#",
+    href: "https://www.instagram.com/muhammed_ajmalcc/",
   },
   {
     id: 4,
     label: "whatsapp",
-    href: "#",
+    href: "https://wa.me/7025715250",
   },
   {
     id: 5,
