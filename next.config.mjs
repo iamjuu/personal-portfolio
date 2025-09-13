@@ -10,6 +10,8 @@ export default withSentryConfig(nextConfig, {
 silent: true,
 org: "javascript-mastery",
 project: "javascript-nextjs",
+// Disable source map uploading if no auth token is available
+uploadSourceMaps: process.env.SENTRY_AUTH_TOKEN ? true : false,
 }, {
 // For all available options, see:
 // https://docs.sentry.io/platforms/javascript/guides/nextjs/manual-setup/
