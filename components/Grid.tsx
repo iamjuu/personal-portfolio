@@ -1,5 +1,15 @@
 import { gridItems } from "@/data";
-import { BentoGrid, BentoGridItem } from "./ui/BentoGrid";
+import dynamic from "next/dynamic";
+
+const BentoGrid = dynamic(() => import("./ui/BentoGrid").then((m) => ({ default: m.BentoGrid })), {
+  ssr: false,
+  loading: () => <div className="w-full h-96 bg-gray-900 rounded-lg" />,
+});
+
+const BentoGridItem = dynamic(() => import("./ui/BentoGrid").then((m) => ({ default: m.BentoGridItem })), {
+  ssr: false,
+  loading: () => <div className="w-full h-96 bg-gray-900 rounded-lg" />,
+});
 
 const Grid = () => {
   return (
