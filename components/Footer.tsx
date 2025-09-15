@@ -4,12 +4,19 @@ import { socialMedia } from "@/data";
 import MagicButton from "./MagicButton";
 import Image from "next/image";
 import { Github, Linkedin, Instagram, Mail, MessageCircle } from "lucide-react";
+import { useToast } from "./ui/Toast";
 
 const Footer = () => {
+  const { showToast } = useToast();
+
+  const handleContactClick = () => {
+    showToast("Thank you for your interest! I'll get back to you soon.", "success");
+  };
+
   return (
-    <footer className="w-full pt-20 pb-10" id="contact">
+    <footer className="w-full pt-20 pb-1" id="contact">
       {/* background grid */}
-      <div className="w-full absolute left-0 -bottom-72 min-h-96">
+      <div className="w-full absolute left-0 -bottom-32 min-h-96">
         <Image
           src="/footer-grid.svg"
           alt="grid"
@@ -27,13 +34,13 @@ const Footer = () => {
           Reach out to me today and let&apos;s discuss how I can help you
           achieve your goals.
         </p>
-        <a href="mailto:muhammedajmalcc6424094@gmail.com">
+        <button onClick={handleContactClick}>
           <MagicButton
             title="Let's get in touch"
             icon={<FaLocationArrow />}
             position="right"
           />
-        </a>
+        </button>
       </div>
       <div className="flex mt-16 md:flex-row flex-col justify-between gap-5 items-center">
         <p className="text-[12px]">
